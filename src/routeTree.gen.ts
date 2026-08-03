@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
@@ -30,6 +31,11 @@ const ContactRoute = ContactRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/chat': typeof ApiChatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/chat': typeof ApiChatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/chat': typeof ApiChatRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/sitemap.xml'
+    | '/api/chat'
     | '/blog/$slug'
     | '/services/$slug'
     | '/blog/'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/sitemap.xml'
+    | '/api/chat'
     | '/blog/$slug'
     | '/services/$slug'
     | '/blog'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/sitemap.xml'
+    | '/api/chat'
     | '/blog/$slug'
     | '/services/$slug'
     | '/blog/'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiChatRoute: typeof ApiChatRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiChatRoute: ApiChatRoute,
   BlogSlugRoute: BlogSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
