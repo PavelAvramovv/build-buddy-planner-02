@@ -22,15 +22,7 @@ import { services } from "@/lib/site-content";
 
 import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
-import svcCladding from "@/assets/svc-cladding.jpg";
-import aAfter from "@/assets/a-after.jpg.asset.json";
-import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
-import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
-import bBeforeSide from "@/assets/b-before-side.jpg.asset.json";
-import cProgress from "@/assets/c-progress.jpg.asset.json";
-import eAfterHome from "@/assets/e-after.jpg.asset.json";
-import eProgress from "@/assets/e-progress.jpg.asset.json";
-import dComplete from "@/assets/d-complete.jpg.asset.json";
+import { projectFilters, projects } from "@/lib/projects-data";
 
 
 
@@ -109,21 +101,6 @@ const stats = [
   { icon: Star, value: "5.0", label: "Google rating" },
 ];
 
-const projectFilters = ["All projects", "Insulation", "Render", "Cladding"];
-
-const projects = [
-  { img: eAfterHome.url, title: "Rendered semi, Birmingham", tag: "Render" },
-  { img: eProgress.url, title: "Scaffolded EWI job, Birmingham", tag: "Insulation" },
-  { img: bAfterFront.url, title: "Full render, Dudley", tag: "Render" },
-  { img: aAfter.url, title: "EWI + silicone render, Dudley", tag: "Insulation" },
-  { img: cProgress.url, title: "Semi-detached, work in progress", tag: "Insulation" },
-  { img: dComplete.url, title: "Detached house, Solihull", tag: "Render" },
-  { img: bAfterSide.url, title: "Side elevation, Dudley", tag: "Render" },
-  { img: svcCladding, title: "Rear extension, Coventry", tag: "Cladding" },
-  { img: heroHouse, title: "Detached house, Birmingham", tag: "Insulation" },
-  { img: aboutSite, title: "Terrace façade, Solihull", tag: "Render" },
-  { img: bBeforeSide.url, title: "Gable elevation, Dudley", tag: "Render" },
-];
 
 
 const faqs = [
@@ -414,6 +391,15 @@ function Index() {
                 </figcaption>
               </figure>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5"
+            >
+              View all projects <ArrowRight className="size-4" />
+            </Link>
           </div>
         </div>
       </section>

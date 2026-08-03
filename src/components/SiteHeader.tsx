@@ -7,6 +7,7 @@ export const navItems = [
   { label: "Home", to: "/" as const },
   { label: "About", to: "/" as const, hash: "about" },
   { label: "Services", to: "/services" as const },
+  { label: "Projects", to: "/projects" as const },
   { label: "AI Visualiser", to: "/" as const, hash: "visualiser" },
   { label: "Blog", to: "/blog" as const },
   { label: "AI Assistant", to: "/chat" as const },
