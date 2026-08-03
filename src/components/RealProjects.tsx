@@ -7,6 +7,8 @@ import bBeforeFront from "@/assets/b-before-front.jpg.asset.json";
 import bBeforeSide from "@/assets/b-before-side.jpg.asset.json";
 import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
 import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
+import eBefore from "@/assets/e-before.jpg.asset.json";
+import eAfter from "@/assets/e-after.jpg.asset.json";
 
 type Pair = {
   id: string;
