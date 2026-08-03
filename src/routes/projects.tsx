@@ -27,6 +27,43 @@ export const Route = createFileRoute("/projects")({
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Eco Insulate Limited projects",
+          itemListElement: projects.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "CreativeWork",
+              name: p.title,
+              description: p.details,
+              image: `https://build-buddy-planner-02.lovable.app${p.img}`,
+              locationCreated: { "@type": "Place", name: p.location },
+            },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://build-buddy-planner-02.lovable.app/",
+            },
+            { "@type": "ListItem", position: 2, name: "Projects", item: URL },
+          ],
+        }),
+      },
+    ],
   }),
   component: ProjectsPage,
 });
