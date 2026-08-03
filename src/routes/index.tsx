@@ -118,7 +118,7 @@ const projects = [
   { img: svcCladding, title: "Rear extension, Coventry", tag: "Cladding" },
   { img: heroHouse, title: "Detached house, Birmingham", tag: "Insulation" },
   { img: aboutSite, title: "Terrace façade, Solihull", tag: "Render" },
-  { img: svcRender, title: "Apartment block, Wolverhampton", tag: "Render" },
+  { img: bBeforeSide.url, title: "Gable elevation, Dudley", tag: "Render" },
 ];
 
 
