@@ -55,15 +55,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navItems = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "AI Visualiser", href: "#visualiser" },
-  { label: "Projects", href: "#projects" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-];
 
 const benefits = [
   {
