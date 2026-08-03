@@ -264,13 +264,15 @@ function Index() {
                     ))}
                   </ul>
 
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
                     className="mt-5 inline-flex items-center gap-2 font-display text-xs font-bold tracking-widest uppercase"
                   >
-                    Contact us
+                    Read more
                     <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </Link>
+
                 </div>
               </article>
             ))}
