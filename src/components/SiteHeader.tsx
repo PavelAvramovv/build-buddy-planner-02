@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { HardHat, Phone } from "lucide-react";
+import { HardHat, Menu, Phone, X } from "lucide-react";
+import { useState } from "react";
 
 import { company } from "@/lib/site-content";
 
@@ -16,6 +17,8 @@ export const navItems = [
 
 
 export function SiteHeader({ variant = "solid" }: { variant?: "solid" | "overlay" }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <header
       className={
