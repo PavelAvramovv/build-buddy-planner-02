@@ -526,129 +526,19 @@ function Index() {
         </div>
       </section>
 
-      {/* Footer / contact */}
-      <footer id="contact" className="bg-ink py-16 text-ink-foreground">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex size-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
-                <HardHat className="size-5" />
-              </span>
-              <span className="font-display text-lg font-bold tracking-wide uppercase">
-                Eco Insulate Limited
-              </span>
-            </div>
-            <p className="mt-4 text-sm text-ink-foreground/65">
-              Sustainable insulation, render and plaster solutions for homes across the United
-              Kingdom.
-            </p>
-            <div className="mt-5 flex gap-3">
-              <a
-                href="https://facebook.com/profile.php?id=100090297229480"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="flex size-9 items-center justify-center rounded-full bg-ink-soft hover:text-primary"
-              >
-                <Facebook className="size-4" />
-              </a>
-              <a
-                href="https://instagram.com/ecoisulatelimited"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="flex size-9 items-center justify-center rounded-full bg-ink-soft hover:text-primary"
-              >
-                <Instagram className="size-4" />
-              </a>
-              <span className="flex size-9 items-center justify-center rounded-full bg-ink-soft">
-                <Ruler className="size-4" />
-              </span>
-            </div>
+      {/* Map */}
+      <section className="bg-surface py-16">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="text-center">
+            <p className="eyebrow">Find us</p>
+            <h2 className="mt-2 text-4xl font-bold">Where we are based</h2>
           </div>
-
-          <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">
-              Quick links
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm text-ink-foreground/65">
-              {navItems.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-primary">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">Services</h3>
-            <ul className="mt-4 space-y-2 text-sm text-ink-foreground/65">
-              {services.map((s) => (
-                <li key={s.title}>{s.title}</li>
-              ))}
-              <li className="flex items-center gap-2">
-                <Flame className="size-3.5 text-primary" /> Fire-rated systems
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">Contact us</h3>
-            <ul className="mt-4 space-y-3 text-sm text-ink-foreground/65">
-              <li className="flex items-center gap-2">
-                <Phone className="size-4 text-primary" />
-                <a href="tel:+447979112991">07979 112991</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="size-4 text-primary" />
-                <a href="mailto:ecoisulatelimited@gmail.com">ecoisulatelimited@gmail.com</a>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 size-4 text-primary" /> 692-696 Stratford Road, Sparkhill,
-                Birmingham, United Kingdom
-              </li>
-            </ul>
-
-            <form
-              className="mt-6 space-y-2"
-              onSubmit={(e) => {
-                e.preventDefault();
-                (e.currentTarget as HTMLFormElement).reset();
-              }}
-            >
-              <input
-                required
-                placeholder="Name"
-                className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
-              />
-              <input
-                required
-                type="email"
-                placeholder="Email address"
-                className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
-              />
-              <textarea
-                rows={3}
-                placeholder="Message"
-                className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
-              />
-              <button
-                type="submit"
-                className="w-full rounded-sm bg-primary py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase"
-              >
-                Submit form
-              </button>
-            </form>
-          </div>
+          <GoogleMap className="mt-10" />
         </div>
+      </section>
 
-        <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-ink-foreground/10 px-5 pt-6 text-xs text-ink-foreground/50 sm:flex-row sm:justify-between">
-          <p>© 2026 Eco Insulate Limited. All rights reserved.</p>
-          <p>Privacy policy · Terms &amp; conditions</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
+
