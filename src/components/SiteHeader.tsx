@@ -40,7 +40,7 @@ export function SiteHeader({ variant = "solid" }: { variant?: "solid" | "overlay
             <Link
               key={item.label}
               to={item.to}
-              hash={item.hash}
+              {...("hash" in item && item.hash ? { hash: item.hash } : {})}
               className="font-display text-sm font-semibold tracking-widest text-ink-foreground/80 uppercase transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
               activeOptions={{ exact: item.to === "/" }}
