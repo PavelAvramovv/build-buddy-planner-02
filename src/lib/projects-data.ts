@@ -24,6 +24,22 @@ export const projectFilters = ["All projects", "Insulation", "Render", "Cladding
 
 export const projects: Project[] = [
   {
+    img: fGableAfter.url,
+    title: "Re-rendered gable, Birmingham",
+    tag: "Render",
+    location: "Birmingham",
+    summary:
+      "Blown, peeling render stripped off the gable, substrate repaired and re-finished in a smooth white silicone render.",
+  },
+  {
+    img: fFront.url,
+    title: "Front elevation render, Birmingham",
+    tag: "Render",
+    location: "Birmingham",
+    summary:
+      "Front elevation of the same property finished in crisp white render with the original brickwork and detailing kept clean.",
+  },
+  {
     img: eAfter.url,
     title: "Rendered semi, Birmingham",
     tag: "Render",
