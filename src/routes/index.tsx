@@ -41,9 +41,30 @@ export const Route = createFileRoute("/")({
           "Professional insulation installation, eco-friendly materials and energy efficiency consultations across the United Kingdom.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://build-buddy-planner-02.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://build-buddy-planner-02.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Eco Insulate Limited",
+          description:
+            "Insulation installation, eco-friendly materials, external wall cladding, render and plaster across the UK.",
+          telephone: "07979 112991",
+          email: "ecoisulatelimited@gmail.com",
+          url: "https://build-buddy-planner-02.lovable.app/",
+          address: { "@type": "PostalAddress", addressLocality: "Birmingham", addressCountry: "GB" },
+          areaServed: "United Kingdom",
+          geo: { "@type": "GeoCoordinates", latitude: 52.4762122, longitude: -2.0792682 },
+        }),
+      },
+    ],
   }),
+
   component: Index,
 });
 
