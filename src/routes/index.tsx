@@ -28,6 +28,8 @@ import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
 import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
 import bBeforeSide from "@/assets/b-before-side.jpg.asset.json";
 import cProgress from "@/assets/c-progress.jpg.asset.json";
+import eAfterHome from "@/assets/e-after.jpg.asset.json";
+import eProgress from "@/assets/e-progress.jpg.asset.json";
 import dComplete from "@/assets/d-complete.jpg.asset.json";
 
 
