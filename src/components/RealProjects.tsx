@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-import proj1Before from "@/assets/proj1-before.jpg.asset.json";
-import proj1After from "@/assets/proj1-after.jpg.asset.json";
-import proj1BeforeSide from "@/assets/proj1-before-side.jpg.asset.json";
-import proj2Before from "@/assets/proj2-before.jpg.asset.json";
-import proj2After from "@/assets/proj2-after.jpg.asset.json";
-import proj2BeforeSide from "@/assets/proj2-before-side.jpg.asset.json";
-import proj2AfterSide from "@/assets/proj2-after-side.jpg.asset.json";
+import aBeforeFront from "@/assets/a-before-front.jpg.asset.json";
+import aBeforeSide from "@/assets/a-before-side.jpg.asset.json";
+import aAfter from "@/assets/a-after.jpg.asset.json";
+import bBeforeFront from "@/assets/b-before-front.jpg.asset.json";
+import bBeforeSide from "@/assets/b-before-side.jpg.asset.json";
+import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
+import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
 
 type Pair = {
   id: string;
@@ -25,8 +25,8 @@ const pairs: Pair[] = [
     title: "Tired painted render replaced",
     location: "Dudley, West Midlands",
     work: "External wall insulation + silicone thin-coat render",
-    before: proj1Before.url,
-    after: proj1After.url,
+    before: aBeforeFront.url,
+    after: aAfter.url,
     beforeAlt: "Detached house with cracked and peeling green painted render before the work",
     afterAlt: "The same house after external wall insulation and a cream silicone render finish",
   },
@@ -35,8 +35,8 @@ const pairs: Pair[] = [
     title: "Front elevation transformation",
     location: "Dudley, West Midlands",
     work: "Insulated render to upper elevations, brick retained below",
-    before: proj2Before.url,
-    after: proj2After.url,
+    before: bBeforeFront.url,
+    after: bAfterFront.url,
     beforeAlt: "Semi-detached house with weathered pebble dash to the upper walls before rendering",
     afterAlt: "The same house after a smooth brilliant white render finish to the upper walls",
   },
@@ -45,8 +45,8 @@ const pairs: Pair[] = [
     title: "Side elevation, same property",
     location: "Dudley, West Midlands",
     work: "Insulated render, crisp bead lines and neat reveals",
-    before: proj2BeforeSide.url,
-    after: proj2AfterSide.url,
+    before: bBeforeSide.url,
+    after: bAfterSide.url,
     beforeAlt: "Side elevation with old textured render before the work",
     afterAlt: "Side elevation after a smooth white render finish",
   },
@@ -55,8 +55,8 @@ const pairs: Pair[] = [
     title: "Gable wall made good",
     location: "Dudley, West Midlands",
     work: "Substrate repairs before insulation and render",
-    before: proj1BeforeSide.url,
-    after: proj1After.url,
+    before: aBeforeSide.url,
+    after: aAfter.url,
     beforeAlt: "Cracked gable wall with failing render before the work",
     afterAlt: "Completed property after external wall insulation and render",
   },
