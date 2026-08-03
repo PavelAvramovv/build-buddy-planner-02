@@ -282,6 +282,24 @@ function Index() {
         </div>
       </section>
 
+      {/* UK coverage */}
+      <section className="border-b border-border bg-surface">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p className="flex items-center gap-2">
+            <MapPin className="size-4 text-primary" />
+            <span>
+              <span className="font-semibold text-foreground">Areas we cover:</span> Birmingham,
+              Solihull, Coventry, Wolverhampton, the West Midlands and nationwide across the UK.
+            </span>
+          </p>
+          <p className="flex items-center gap-2">
+            <Shield className="size-4 text-primary" />
+            Work carried out to UK Building Regulations &amp; PAS 2035 standards
+          </p>
+        </div>
+      </section>
+
+
       {/* Services */}
       <section id="services" className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-5">
