@@ -392,6 +392,15 @@ function Index() {
               </figure>
             ))}
           </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5"
+            >
+              View all projects <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
