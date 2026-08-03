@@ -176,49 +176,8 @@ function Index() {
   return (
     <div id="top" className="min-h-screen bg-background">
       {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-30">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-5">
-          <a href="#top" className="flex items-center gap-2.5 text-ink-foreground">
-            <span className="flex size-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
-              <HardHat className="size-5" />
-            </span>
-            <span className="font-display text-lg leading-none font-bold tracking-wide uppercase">
-              Eco Insulate
-              <span className="block text-[0.6rem] font-medium tracking-[0.3em] text-primary">
-                limited
-              </span>
-            </span>
-          </a>
+      <SiteHeader variant="overlay" />
 
-          <nav className="hidden items-center gap-6 lg:flex">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="font-display text-sm font-semibold tracking-widest text-ink-foreground/80 uppercase transition-colors hover:text-primary"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="tel:+447979112991"
-              className="hidden items-center gap-2 text-sm font-semibold text-ink-foreground sm:flex"
-            >
-              <Phone className="size-4 text-primary" />
-              07979 112991
-            </a>
-            <a
-              href="#contact"
-              className="rounded-sm bg-primary px-4 py-2.5 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5"
-            >
-              Free quote
-            </a>
-          </div>
-        </div>
-      </header>
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-ink">
