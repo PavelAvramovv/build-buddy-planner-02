@@ -79,38 +79,6 @@ const benefits = [
   },
 ];
 
-const services = [
-  {
-    img: svcInsulation,
-    title: "Insulation Installation",
-    text: "Our team of experts will install high-quality insulation in your home, ensuring maximum energy efficiency and comfort, using eco-friendly materials that minimise environmental impact.",
-    points: ["Professional installation", "Eco-friendly materials", "Energy-saving benefits"],
-  },
-  {
-    img: svcRender,
-    title: "Eco-friendly Materials",
-    text: "A wide range of eco-friendly insulation materials, carefully selected for their sustainability and effectiveness — from natural fibres to recycled options.",
-    points: ["Variety of materials", "Sustainability", "Effectiveness"],
-  },
-  {
-    img: svcPlaster,
-    title: "Energy Efficiency Consultation",
-    text: "Personalised recommendations to optimise your home's energy usage. We identify areas for improvement and implement sustainable solutions for long-term savings.",
-    points: ["Customised consultation", "Maximised savings", "Reduced carbon footprint"],
-  },
-  {
-    img: svcCladding,
-    title: "External Wall Cladding",
-    text: "Ventilated façades and cladding systems that protect the building fabric while giving your property a modern, lasting finish.",
-    points: ["Modern appearance", "Moisture protection", "Minimal maintenance"],
-  },
-  {
-    img: heroHouse,
-    title: "Render & Plaster Finishes",
-    text: "Smooth silicone render, monocouche and internal plaster finishes applied by time-served plasterers for a flawless, durable surface.",
-    points: ["Crisp, smooth finishes", "Colour of your choice", "Clear timescales and pricing"],
-  },
-];
 
 const stats = [
   { icon: Award, value: "12+", label: "Years of experience" },
