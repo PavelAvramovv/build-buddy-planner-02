@@ -22,7 +22,6 @@ import { services } from "@/lib/site-content";
 
 import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
-import svcRender from "@/assets/svc-render.jpg";
 import svcCladding from "@/assets/svc-cladding.jpg";
 import aAfter from "@/assets/a-after.jpg.asset.json";
 import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
