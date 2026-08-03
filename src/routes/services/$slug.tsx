@@ -3,7 +3,7 @@ import { CheckCircle2, Phone } from "lucide-react";
 
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { company, services } from "@/lib/site-content";
+import { company, services, type Service } from "@/lib/site-content";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
