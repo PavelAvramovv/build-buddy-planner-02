@@ -15,8 +15,9 @@ export const company = {
   facebook: "https://facebook.com/profile.php?id=100090297229480",
   instagram: "https://instagram.com/ecoisulatelimited",
   mapEmbed:
-    "https://www.google.com/maps?q=52.4762122,-2.0792682&hl=en&z=13&output=embed",
-  mapLink: "https://maps.app.goo.gl/xcGRwYZxYVbqAiFEA",
+    "https://www.google.com/maps?q=692-696+Stratford+Road,+Sparkhill,+Birmingham,+UK&hl=en&z=15&output=embed",
+  mapLink:
+    "https://www.google.com/maps/search/?api=1&query=692-696+Stratford+Road,+Sparkhill,+Birmingham,+UK",
 };
 
 export type Service = {
