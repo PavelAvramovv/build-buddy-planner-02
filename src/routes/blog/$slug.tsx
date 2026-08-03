@@ -11,7 +11,7 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) throw notFound();
     return { post };
   },
-  head: ({ loaderData }) => {
+  head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
         meta: [
@@ -22,6 +22,7 @@ export const Route = createFileRoute("/blog/$slug")({
     }
     const { post } = loaderData;
     const title = `${post.title} | Eco Insulate Limited`;
+    const url = `https://build-buddy-planner-02.lovable.app/blog/${params.slug}`;
     return {
       meta: [
         { title },
@@ -29,10 +30,28 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: post.excerpt },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            mainEntityOfPage: url,
+            author: { "@type": "Organization", name: "Eco Insulate Limited" },
+            publisher: { "@type": "Organization", name: "Eco Insulate Limited" },
+          }),
+        },
       ],
     };
   },
+
   component: BlogPost,
 });
 
