@@ -23,7 +23,6 @@ type Pair = {
 
 const pairs: Pair[] = [
   {
-  {
     id: "pair-0",
     title: "Red brick semi wrapped and rendered",
     location: "Birmingham",
