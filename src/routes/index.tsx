@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import { BeforeAfterAI } from "@/components/BeforeAfterAI";
+import { RealProjects } from "@/components/RealProjects";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { GoogleMap } from "@/components/GoogleMap";
@@ -23,6 +24,12 @@ import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
 import svcRender from "@/assets/svc-render.jpg";
 import svcCladding from "@/assets/svc-cladding.jpg";
+import proj1After from "@/assets/proj1-after.jpg.asset.json";
+import proj2After from "@/assets/proj2-after.jpg.asset.json";
+import proj2AfterSide from "@/assets/proj2-after-side.jpg.asset.json";
+import proj3Progress from "@/assets/proj3-progress.jpg.asset.json";
+import proj4Complete from "@/assets/proj4-complete.jpg.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
@@ -103,11 +110,17 @@ const stats = [
 const projectFilters = ["All projects", "Insulation", "Render", "Cladding"];
 
 const projects = [
+  { img: proj2After.url, title: "Full render, Dudley", tag: "Render" },
+  { img: proj1After.url, title: "EWI + silicone render, Dudley", tag: "Insulation" },
+  { img: proj3Progress.url, title: "Semi-detached, work in progress", tag: "Insulation" },
+  { img: proj4Complete.url, title: "Detached house, Solihull", tag: "Render" },
+  { img: proj2AfterSide.url, title: "Side elevation, Dudley", tag: "Render" },
+  { img: svcCladding, title: "Rear extension, Coventry", tag: "Cladding" },
   { img: heroHouse, title: "Detached house, Birmingham", tag: "Insulation" },
   { img: aboutSite, title: "Terrace façade, Solihull", tag: "Render" },
-  { img: svcCladding, title: "Rear extension, Coventry", tag: "Cladding" },
   { img: svcRender, title: "Apartment block, Wolverhampton", tag: "Render" },
 ];
+
 
 const faqs = [
   {
@@ -293,8 +306,12 @@ function Index() {
         </div>
       </section>
 
+      {/* Real before & after photos */}
+      <RealProjects />
+
       {/* AI before & after visualiser */}
       <BeforeAfterAI />
+
 
       {/* About */}
       <section id="about" className="bg-background py-20">
