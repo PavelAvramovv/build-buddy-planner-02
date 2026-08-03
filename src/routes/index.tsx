@@ -318,12 +318,13 @@ function Index() {
               ))}
             </div>
 
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="mt-8 inline-block rounded-sm bg-primary px-6 py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase"
             >
               Get in touch
-            </a>
+            </Link>
+
           </div>
         </div>
       </section>
