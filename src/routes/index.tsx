@@ -112,6 +112,8 @@ const stats = [
 const projectFilters = ["All projects", "Insulation", "Render", "Cladding"];
 
 const projects = [
+  { img: eAfterHome.url, title: "Rendered semi, Birmingham", tag: "Render" },
+  { img: eProgress.url, title: "Scaffolded EWI job, Birmingham", tag: "Insulation" },
   { img: bAfterFront.url, title: "Full render, Dudley", tag: "Render" },
   { img: aAfter.url, title: "EWI + silicone render, Dudley", tag: "Insulation" },
   { img: cProgress.url, title: "Semi-detached, work in progress", tag: "Insulation" },
