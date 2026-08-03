@@ -9,6 +9,7 @@ export const navItems = [
   { label: "Services", to: "/services" as const },
   { label: "AI Visualiser", to: "/" as const, hash: "visualiser" },
   { label: "Blog", to: "/blog" as const },
+  { label: "AI Assistant", to: "/chat" as const },
   { label: "Contact", to: "/contact" as const },
 ];
 
