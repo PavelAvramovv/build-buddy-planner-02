@@ -435,12 +435,13 @@ function Index() {
             Get in touch today for a free consultation on your insulation needs. Alternatively call
             07979 112991.
           </p>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="mt-6 inline-block rounded-sm bg-primary px-7 py-3.5 font-display text-sm font-bold tracking-widest text-primary-foreground uppercase"
           >
             Request a free quote
-          </a>
+          </Link>
+
         </div>
       </section>
 
