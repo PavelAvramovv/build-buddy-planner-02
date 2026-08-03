@@ -28,6 +28,8 @@ import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
 import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
 import bBeforeSide from "@/assets/b-before-side.jpg.asset.json";
 import cProgress from "@/assets/c-progress.jpg.asset.json";
+import eAfterHome from "@/assets/e-after.jpg.asset.json";
+import eProgress from "@/assets/e-progress.jpg.asset.json";
 import dComplete from "@/assets/d-complete.jpg.asset.json";
 
 
@@ -110,6 +112,8 @@ const stats = [
 const projectFilters = ["All projects", "Insulation", "Render", "Cladding"];
 
 const projects = [
+  { img: eAfterHome.url, title: "Rendered semi, Birmingham", tag: "Render" },
+  { img: eProgress.url, title: "Scaffolded EWI job, Birmingham", tag: "Insulation" },
   { img: bAfterFront.url, title: "Full render, Dudley", tag: "Render" },
   { img: aAfter.url, title: "EWI + silicone render, Dudley", tag: "Insulation" },
   { img: cProgress.url, title: "Semi-detached, work in progress", tag: "Insulation" },

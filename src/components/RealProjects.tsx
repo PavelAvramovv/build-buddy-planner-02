@@ -7,6 +7,8 @@ import bBeforeFront from "@/assets/b-before-front.jpg.asset.json";
 import bBeforeSide from "@/assets/b-before-side.jpg.asset.json";
 import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
 import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
+import eBefore from "@/assets/e-before.jpg.asset.json";
+import eAfter from "@/assets/e-after.jpg.asset.json";
 
 type Pair = {
   id: string;
@@ -20,6 +22,16 @@ type Pair = {
 };
 
 const pairs: Pair[] = [
+  {
+    id: "pair-0",
+    title: "Red brick semi wrapped and rendered",
+    location: "Birmingham",
+    work: "Full external wall insulation + through-coloured render, dark grey trims",
+    before: eBefore.url,
+    after: eAfter.url,
+    beforeAlt: "Red brick semi-detached house with tile-hung bays before external wall insulation",
+    afterAlt: "The same house after external wall insulation and a smooth off-white render finish",
+  },
   {
     id: "pair-1",
     title: "Tired painted render replaced",
