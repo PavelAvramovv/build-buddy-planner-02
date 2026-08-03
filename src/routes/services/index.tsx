@@ -21,9 +21,12 @@ export const Route = createFileRoute("/services/")({
           "Insulation installation, eco-friendly materials, energy assessments, cladding and render finishes across the UK.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://build-buddy-planner-02.lovable.app/services" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://build-buddy-planner-02.lovable.app/services" }],
   }),
+
   component: ServicesIndex,
 });
 
