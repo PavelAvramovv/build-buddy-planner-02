@@ -9,6 +9,8 @@ import cProgress from "@/assets/c-progress.jpg.asset.json";
 import dComplete from "@/assets/d-complete.jpg.asset.json";
 import eAfter from "@/assets/e-after.jpg.asset.json";
 import eProgress from "@/assets/e-progress.jpg.asset.json";
+import fGableAfter from "@/assets/f-gable-after.jpg.asset.json";
+import fFront from "@/assets/f-front.jpg.asset.json";
 
 export type Project = {
   img: string;
