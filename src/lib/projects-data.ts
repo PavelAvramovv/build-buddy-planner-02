@@ -9,6 +9,8 @@ import cProgress from "@/assets/c-progress.jpg.asset.json";
 import dComplete from "@/assets/d-complete.jpg.asset.json";
 import eAfter from "@/assets/e-after.jpg.asset.json";
 import eProgress from "@/assets/e-progress.jpg.asset.json";
+import fGableAfter from "@/assets/f-gable-after.jpg.asset.json";
+import fFront from "@/assets/f-front.jpg.asset.json";
 
 export type Project = {
   img: string;
@@ -21,6 +23,22 @@ export type Project = {
 export const projectFilters = ["All projects", "Insulation", "Render", "Cladding"];
 
 export const projects: Project[] = [
+  {
+    img: fGableAfter.url,
+    title: "Re-rendered gable, Birmingham",
+    tag: "Render",
+    location: "Birmingham",
+    summary:
+      "Blown, peeling render stripped off the gable, substrate repaired and re-finished in a smooth white silicone render.",
+  },
+  {
+    img: fFront.url,
+    title: "Front elevation render, Birmingham",
+    tag: "Render",
+    location: "Birmingham",
+    summary:
+      "Front elevation of the same property finished in crisp white render with the original brickwork and detailing kept clean.",
+  },
   {
     img: eAfter.url,
     title: "Rendered semi, Birmingham",

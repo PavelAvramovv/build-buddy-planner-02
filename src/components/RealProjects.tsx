@@ -9,6 +9,8 @@ import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
 import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
 import eBefore from "@/assets/e-before.jpg.asset.json";
 import eAfter from "@/assets/e-after.jpg.asset.json";
+import fGableBefore from "@/assets/f-gable-before.jpg.asset.json";
+import fGableAfter from "@/assets/f-gable-after.jpg.asset.json";
 
 type Pair = {
   id: string;
@@ -22,6 +24,16 @@ type Pair = {
 };
 
 const pairs: Pair[] = [
+  {
+    id: "pair-gable-f",
+    title: "Failed render stripped and re-rendered",
+    location: "Birmingham",
+    work: "Gable stripped back, substrate repaired, insulated and finished in white silicone render",
+    before: fGableBefore.url,
+    after: fGableAfter.url,
+    beforeAlt: "Gable end with blown, peeling render exposing brickwork before the work",
+    afterAlt: "The same gable end after re-rendering in a smooth white silicone finish",
+  },
   {
     id: "pair-0",
     title: "Red brick semi wrapped and rendered",
