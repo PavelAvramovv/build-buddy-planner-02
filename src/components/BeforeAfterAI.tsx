@@ -169,17 +169,13 @@ export function BeforeAfterAI() {
                     alt="AI preview of the property after rendering"
                     className="absolute inset-0 size-full object-cover"
                   />
-                  <div
-                    className="absolute inset-y-0 left-0 overflow-hidden"
-                    style={{ width: `${slider}%` }}
-                  >
-                    <img
-                      src={before}
-                      alt="The property before the work"
-                      className="absolute inset-0 h-full w-auto max-w-none object-cover"
-                      style={{ width: `${(100 / Math.max(slider, 1)) * 100}%` }}
-                    />
-                  </div>
+                  <img
+                    src={before}
+                    alt="The property before the work"
+                    className="absolute inset-0 size-full object-cover"
+                    style={{ clipPath: `inset(0 ${100 - slider}% 0 0)` }}
+                  />
+
                   <div
                     className="pointer-events-none absolute inset-y-0 w-0.5 bg-primary"
                     style={{ left: `${slider}%` }}
