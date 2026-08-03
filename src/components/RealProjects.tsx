@@ -23,6 +23,17 @@ type Pair = {
 
 const pairs: Pair[] = [
   {
+  {
+    id: "pair-0",
+    title: "Red brick semi wrapped and rendered",
+    location: "Birmingham",
+    work: "Full external wall insulation + through-coloured render, dark grey trims",
+    before: eBefore.url,
+    after: eAfter.url,
+    beforeAlt: "Red brick semi-detached house with tile-hung bays before external wall insulation",
+    afterAlt: "The same house after external wall insulation and a smooth off-white render finish",
+  },
+  {
     id: "pair-1",
     title: "Tired painted render replaced",
     location: "Dudley, West Midlands",
