@@ -9,6 +9,8 @@ import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
 import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
 import eBefore from "@/assets/e-before.jpg.asset.json";
 import eAfter from "@/assets/e-after.jpg.asset.json";
+import fGableBefore from "@/assets/f-gable-before.jpg.asset.json";
+import fGableAfter from "@/assets/f-gable-after.jpg.asset.json";
 
 type Pair = {
   id: string;
