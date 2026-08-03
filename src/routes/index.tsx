@@ -20,6 +20,7 @@ import {
   Wallet,
 } from "lucide-react";
 
+import { BeforeAfterAI } from "@/components/BeforeAfterAI";
 import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
 import svcInsulation from "@/assets/svc-insulation.jpg";
@@ -30,17 +31,17 @@ import svcPlaster from "@/assets/svc-plaster.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "СтройМакс — Фасади, топлоизолация и ремонти" },
+      { title: "Eco Insulate Limited — Insulation & Rendering UK" },
       {
         name: "description",
         content:
-          "Строителна фирма СтройМакс: топлоизолация на фасади, мазилки, окачени фасади и цялостни ремонти. Безплатен оглед и оферта.",
+          "Eco Insulate Limited installs eco-friendly insulation, render and plaster finishes across the UK. Free consultation and AI before & after visualiser.",
       },
-      { property: "og:title", content: "СтройМакс — Строителна фирма" },
+      { property: "og:title", content: "Eco Insulate Limited — Building a sustainable future for your home" },
       {
         property: "og:description",
         content:
-          "Топлоизолация, фасадни мазилки, облицовки и цялостни ремонти с гаранция за качество.",
+          "Professional insulation installation, eco-friendly materials and energy efficiency consultations across the United Kingdom.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -50,102 +51,117 @@ export const Route = createFileRoute("/")({
 });
 
 const navItems = [
-  { label: "Начало", href: "#top" },
-  { label: "За нас", href: "#about" },
-  { label: "Услуги", href: "#services" },
-  { label: "Проекти", href: "#projects" },
-  { label: "Отзиви", href: "#reviews" },
-  { label: "Контакти", href: "#contact" },
+  { label: "Home", href: "#top" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "AI Visualiser", href: "#visualiser" },
+  { label: "Projects", href: "#projects" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const benefits = [
   {
     icon: Wallet,
-    title: "По-ниски сметки",
-    text: "До 40% икономия на разходи за отопление и ток.",
+    title: "Lower energy bills",
+    text: "Save up to 40% on your heating and energy costs.",
   },
   {
     icon: ThermometerSun,
-    title: "Повече комфорт",
-    text: "Топло през зимата, прохладно през лятото.",
+    title: "Year-round comfort",
+    text: "Warm in the winter, cool through the summer.",
   },
   {
     icon: Building2,
-    title: "По-висока стойност",
-    text: "Обновената фасада повишава цената на имота.",
+    title: "Added property value",
+    text: "A refreshed, well-insulated façade raises your home's value.",
   },
   {
     icon: Shield,
-    title: "Гаранция 10 години",
-    text: "Работим с сертифицирани системи и материали.",
+    title: "Quality guaranteed",
+    text: "Certified systems fitted by skilled, experienced installers.",
   },
 ];
 
 const services = [
   {
     img: svcInsulation,
-    title: "Монтаж на топлоизолация",
-    text: "Изпълняваме пълна изолационна система от опитни майстори — за топъл дом и по-ниски сметки.",
-    points: ["Професионален монтаж", "Сертифицирани системи", "Реална икономия на енергия"],
+    title: "Insulation Installation",
+    text: "Our team of experts will install high-quality insulation in your home, ensuring maximum energy efficiency and comfort, using eco-friendly materials that minimise environmental impact.",
+    points: ["Professional installation", "Eco-friendly materials", "Energy-saving benefits"],
   },
   {
     img: svcRender,
-    title: "Екологични материали",
-    text: "Работим с широка гама материали с ниско въздействие върху околната среда и висока ефективност.",
-    points: ["Голям избор", "Устойчиви материали", "Дълготраен ефект"],
+    title: "Eco-friendly Materials",
+    text: "A wide range of eco-friendly insulation materials, carefully selected for their sustainability and effectiveness — from natural fibres to recycled options.",
+    points: ["Variety of materials", "Sustainability", "Effectiveness"],
   },
   {
     img: svcPlaster,
-    title: "Консултация за енергийна ефективност",
-    text: "Оглед на място и конкретни препоръки — къде губите топлина и как да го решите изгодно.",
-    points: ["Индивидуален оглед", "Максимална икономия", "По-нисък въглероден отпечатък"],
+    title: "Energy Efficiency Consultation",
+    text: "Personalised recommendations to optimise your home's energy usage. We identify areas for improvement and implement sustainable solutions for long-term savings.",
+    points: ["Customised consultation", "Maximised savings", "Reduced carbon footprint"],
   },
   {
     img: svcCladding,
-    title: "Окачени фасади",
-    text: "Вентилируеми фасади и облицовки с модерна визия и дълъг живот.",
-    points: ["Модерен външен вид", "Защита от влага", "Минимална поддръжка"],
+    title: "External Wall Cladding",
+    text: "Ventilated façades and cladding systems that protect the building fabric while giving your property a modern, lasting finish.",
+    points: ["Modern appearance", "Moisture protection", "Minimal maintenance"],
   },
   {
     img: heroHouse,
-    title: "Цялостни ремонти",
-    text: "Довършителни работи, покриви, дограма и вътрешен ремонт с един изпълнител.",
-    points: ["Един отговорник", "Ясни срокове", "Прозрачна цена"],
+    title: "Render & Plaster Finishes",
+    text: "Smooth silicone render, monocouche and internal plaster finishes applied by time-served plasterers for a flawless, durable surface.",
+    points: ["Crisp, smooth finishes", "Colour of your choice", "Clear timescales and pricing"],
   },
 ];
 
-
 const stats = [
-  { icon: Award, value: "12+", label: "Години опит" },
-  { icon: Hammer, value: "600+", label: "Завършени обекта" },
-  { icon: CheckCircle2, value: "100%", label: "Доволни клиенти" },
-  { icon: Star, value: "5.0", label: "Оценка в Google" },
+  { icon: Award, value: "12+", label: "Years of experience" },
+  { icon: Hammer, value: "600+", label: "Projects completed" },
+  { icon: CheckCircle2, value: "100%", label: "Happy customers" },
+  { icon: Star, value: "5.0", label: "Google rating" },
 ];
 
-const projectFilters = ["Всички проекти", "Топлоизолация", "Мазилки", "Облицовки"];
+const projectFilters = ["All projects", "Insulation", "Render", "Cladding"];
 
 const projects = [
-  { img: heroHouse, title: "Еднофамилна къща, София", tag: "Топлоизолация" },
-  { img: aboutSite, title: "Фасада, Пловдив", tag: "Мазилки" },
-  { img: svcCladding, title: "Пристройка, Варна", tag: "Облицовки" },
-  { img: svcRender, title: "Жилищна сграда, Бургас", tag: "Мазилки" },
+  { img: heroHouse, title: "Detached house, Birmingham", tag: "Insulation" },
+  { img: aboutSite, title: "Terrace façade, Solihull", tag: "Render" },
+  { img: svcCladding, title: "Rear extension, Coventry", tag: "Cladding" },
+  { img: svcRender, title: "Apartment block, Wolverhampton", tag: "Render" },
+];
+
+const faqs = [
+  {
+    q: "What types of insulation materials do you offer?",
+    a: "We offer a variety of insulation materials, including natural fibres and recycled options, all of which are eco-friendly and effective.",
+  },
+  {
+    q: "Do you provide energy efficiency assessments?",
+    a: "Yes, we provide energy efficiency assessments to help you optimise your home's energy usage and save money.",
+  },
+  {
+    q: "How can I schedule an installation consultation?",
+    a: "You can schedule an installation consultation by contacting our team directly via phone or email.",
+  },
 ];
 
 const reviews = [
   {
-    text: "Отлична работа от начало до край. Екипът беше коректен, спазиха срока и качеството е на ниво.",
-    name: "Иван Д.",
-    city: "София",
+    text: "Eco Insulate Limited provided exceptional service, delivering top-notch insulation for my home. Their attention to detail and eco-friendly approach truly set them apart from the rest.",
+    name: "Sarah Johnson",
+    city: "Birmingham",
   },
   {
-    text: "Къщата изглежда като нова. Много сме доволни от изолацията и мазилката — усеща се разликата.",
-    name: "Мария С.",
-    city: "Пловдив",
+    text: "The team turned up on time, worked cleanly and the finish on the render is superb. Our home feels noticeably warmer already.",
+    name: "David M.",
+    city: "Solihull",
   },
   {
-    text: "Надеждни, комуникативни и на добра цена. Най-доброто решение за нашия имот.",
-    name: "Михаил Т.",
-    city: "Варна",
+    text: "Honest advice, fair pricing and excellent workmanship. I would not hesitate to recommend them to anyone.",
+    name: "Priya K.",
+    city: "Coventry",
   },
 ];
 
@@ -167,14 +183,14 @@ function Index() {
               <HardHat className="size-5" />
             </span>
             <span className="font-display text-lg leading-none font-bold tracking-wide uppercase">
-              Строймакс
+              Eco Insulate
               <span className="block text-[0.6rem] font-medium tracking-[0.3em] text-primary">
-                строителна фирма
+                limited
               </span>
             </span>
           </a>
 
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="hidden items-center gap-6 lg:flex">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -188,17 +204,17 @@ function Index() {
 
           <div className="flex items-center gap-4">
             <a
-              href="tel:+359888123456"
+              href="tel:+447979112991"
               className="hidden items-center gap-2 text-sm font-semibold text-ink-foreground sm:flex"
             >
               <Phone className="size-4 text-primary" />
-              0888 123 456
+              07979 112991
             </a>
             <a
               href="#contact"
               className="rounded-sm bg-primary px-4 py-2.5 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5"
             >
-              Безплатна оферта
+              Free quote
             </a>
           </div>
         </div>
@@ -208,7 +224,7 @@ function Index() {
       <section className="relative isolate overflow-hidden bg-ink">
         <img
           src={heroHouse}
-          alt="Обновена фасада на еднофамилна къща"
+          alt="Newly insulated and rendered family home"
           width={1600}
           height={1100}
           className="absolute inset-0 size-full object-cover"
@@ -218,35 +234,35 @@ function Index() {
           style={{ backgroundImage: "var(--gradient-hero)" }}
         />
         <div className="relative mx-auto max-w-7xl px-5 pt-40 pb-24 md:pt-52 md:pb-32">
-          <p className="eyebrow">Строймакс ООД</p>
+          <p className="eyebrow">Eco Insulate Limited</p>
           <h1 className="mt-4 max-w-2xl font-display text-5xl leading-[0.95] font-bold text-ink-foreground uppercase md:text-7xl">
-            Специалисти по
+            Building a
             <br />
-            фасади и
+            sustainable future
             <br />
-            топлоизолация
+            for your home
           </h1>
           <p className="mt-6 max-w-md text-ink-foreground/75">
-            Помагаме ви да намалите сметките и да подобрите комфорта на дома си с
-            висококачествени изолационни системи.
+            A leading construction company in the United Kingdom, specialising in eco-friendly
+            insulation solutions — your value for money.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#services"
               className="rounded-sm bg-primary px-6 py-3.5 font-display text-sm font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5"
             >
-              Нашите услуги
+              Explore services
             </a>
             <a
-              href="#contact"
+              href="#visualiser"
               className="rounded-sm border border-ink-foreground/40 px-6 py-3.5 font-display text-sm font-bold tracking-widest text-ink-foreground uppercase transition-colors hover:border-primary hover:text-primary"
             >
-              Безплатна оферта
+              Try the AI visualiser
             </a>
           </div>
           <p className="mt-10 flex items-center gap-2 text-sm text-ink-foreground/70">
             <MapPin className="size-4 text-primary" />
-            База в София — работим в цялата страна
+            Based in Birmingham — working across the United Kingdom
           </p>
         </div>
       </section>
@@ -270,8 +286,12 @@ function Index() {
       <section id="services" className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-5">
           <div className="text-center">
-            <p className="eyebrow">Нашите услуги</p>
-            <h2 className="mt-2 text-4xl font-bold">Какво предлагаме</h2>
+            <p className="eyebrow">Our services</p>
+            <h2 className="mt-2 text-4xl font-bold">What we offer</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+              With a commitment to sustainability and quality, we offer a comprehensive range of
+              services to meet all your insulation needs.
+            </p>
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
@@ -307,7 +327,7 @@ function Index() {
                     href="#contact"
                     className="mt-5 inline-flex items-center gap-2 font-display text-xs font-bold tracking-widest uppercase"
                   >
-                    Научи повече
+                    Contact us
                     <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -317,35 +337,40 @@ function Index() {
         </div>
       </section>
 
+      {/* AI before & after visualiser */}
+      <BeforeAfterAI />
+
       {/* About */}
-      <section id="about" className="bg-ink py-20 text-ink-foreground">
+      <section id="about" className="bg-background py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
           <div className="relative">
             <img
               src={aboutSite}
-              alt="Работен екип на строително скеле"
+              alt="Our installation team working on a scaffolded façade"
               loading="lazy"
               width={1200}
               height={1000}
               className="w-full rounded-sm object-cover"
             />
-            <div className="absolute bottom-5 left-5 rounded-sm bg-ink/90 px-5 py-4 backdrop-blur-sm">
+            <div className="absolute bottom-5 left-5 rounded-sm bg-ink/90 px-5 py-4 text-ink-foreground backdrop-blur-sm">
               <p className="font-display text-4xl font-bold text-primary">12+</p>
               <p className="font-display text-xs tracking-widest uppercase">
-                години
+                years of
                 <br />
-                опит
+                experience
               </p>
             </div>
           </div>
 
           <div>
-            <p className="eyebrow">Защо нас</p>
-            <h2 className="mt-2 text-4xl font-bold">Качество, което остава</h2>
-            <p className="mt-4 max-w-xl text-ink-foreground/75">
-              В Строймакс държим на детайла, честния съвет и високия стандарт. Работим
-              само с премиум материали, а системите се монтират от опитни, обучени
-              екипи.
+            <p className="eyebrow">About us</p>
+            <h2 className="mt-2 text-4xl font-bold">Welcome to Eco Insulate Limited</h2>
+            <p className="mt-4 max-w-xl text-muted-foreground">
+              At Eco Insulate Limited, we are dedicated to providing sustainable insulation
+              solutions that make a difference. With a focus on eco-friendly materials and energy
+              efficiency, we strive to create a more sustainable future for homes across the United
+              Kingdom. Our installations are carried out by skilled professionals, ensuring
+              top-quality results and customer satisfaction.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
@@ -353,7 +378,7 @@ function Index() {
                 <div key={s.label}>
                   <s.icon className="size-5 text-primary" />
                   <p className="mt-2 font-display text-2xl font-bold">{s.value}</p>
-                  <p className="text-xs text-ink-foreground/60">{s.label}</p>
+                  <p className="text-xs text-muted-foreground">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -362,7 +387,7 @@ function Index() {
               href="#contact"
               className="mt-8 inline-block rounded-sm bg-primary px-6 py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase"
             >
-              За нас
+              Get in touch
             </a>
           </div>
         </div>
@@ -372,8 +397,8 @@ function Index() {
       <section id="projects" className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-5">
           <div className="text-center">
-            <p className="eyebrow">Нашите проекти</p>
-            <h2 className="mt-2 text-4xl font-bold">Вижте работата ни</h2>
+            <p className="eyebrow">Our projects</p>
+            <h2 className="mt-2 text-4xl font-bold">See our work</h2>
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-2">
@@ -419,8 +444,8 @@ function Index() {
       <section id="reviews" className="bg-background py-20">
         <div className="mx-auto max-w-7xl px-5">
           <div className="text-center">
-            <p className="eyebrow">Отзиви</p>
-            <h2 className="mt-2 text-4xl font-bold">Какво казват клиентите</h2>
+            <p className="eyebrow">Reviews</p>
+            <h2 className="mt-2 text-4xl font-bold">What our customers say</h2>
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -434,7 +459,7 @@ function Index() {
                     <Star key={i} className="size-4 fill-current" />
                   ))}
                 </div>
-                <p className="mt-4 text-sm text-muted-foreground">„{r.text}“</p>
+                <p className="mt-4 text-sm text-muted-foreground">“{r.text}”</p>
                 <footer className="mt-5">
                   <p className="text-sm font-semibold">{r.name}</p>
                   <p className="text-xs text-muted-foreground">{r.city}</p>
@@ -445,18 +470,40 @@ function Index() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="bg-surface py-20">
+        <div className="mx-auto max-w-3xl px-5">
+          <div className="text-center">
+            <p className="eyebrow">FAQ</p>
+            <h2 className="mt-2 text-4xl font-bold">Frequently asked questions</h2>
+          </div>
+          <div className="mt-10 space-y-3">
+            {faqs.map((f) => (
+              <details
+                key={f.q}
+                className="group rounded-sm border border-border bg-card p-5"
+              >
+                <summary className="cursor-pointer list-none font-semibold">{f.q}</summary>
+                <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-ink-soft py-14 text-center text-ink-foreground">
         <div className="mx-auto max-w-3xl px-5">
-          <h2 className="text-3xl font-bold md:text-4xl">Готови ли сте да обновите дома си?</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Ready to upgrade your home?</h2>
           <p className="mt-3 text-ink-foreground/70">
-            Получете безплатен оглед и оферта без ангажимент.
+            Get in touch today for a free consultation on your insulation needs. Alternatively call
+            07979 112991.
           </p>
           <a
             href="#contact"
             className="mt-6 inline-block rounded-sm bg-primary px-7 py-3.5 font-display text-sm font-bold tracking-widest text-primary-foreground uppercase"
           >
-            Заявете оферта
+            Request a free quote
           </a>
         </div>
       </section>
@@ -470,28 +517,41 @@ function Index() {
                 <HardHat className="size-5" />
               </span>
               <span className="font-display text-lg font-bold tracking-wide uppercase">
-                Строймакс
+                Eco Insulate Limited
               </span>
             </div>
             <p className="mt-4 text-sm text-ink-foreground/65">
-              Строителна фирма със седалище в София. Предлагаме пълна гама фасадни и
-              довършителни решения за вашия дом.
+              Sustainable insulation, render and plaster solutions for homes across the United
+              Kingdom.
             </p>
             <div className="mt-5 flex gap-3">
-              {[Facebook, Instagram, Ruler].map((Icon, i) => (
-                <span
-                  key={i}
-                  className="flex size-9 items-center justify-center rounded-full bg-ink-soft"
-                >
-                  <Icon className="size-4" />
-                </span>
-              ))}
+              <a
+                href="https://facebook.com/profile.php?id=100090297229480"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="flex size-9 items-center justify-center rounded-full bg-ink-soft hover:text-primary"
+              >
+                <Facebook className="size-4" />
+              </a>
+              <a
+                href="https://instagram.com/ecoisulatelimited"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="flex size-9 items-center justify-center rounded-full bg-ink-soft hover:text-primary"
+              >
+                <Instagram className="size-4" />
+              </a>
+              <span className="flex size-9 items-center justify-center rounded-full bg-ink-soft">
+                <Ruler className="size-4" />
+              </span>
             </div>
           </div>
 
           <div>
             <h3 className="font-display text-sm font-bold tracking-widest uppercase">
-              Бързи връзки
+              Quick links
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-ink-foreground/65">
               {navItems.map((item) => (
@@ -505,32 +565,31 @@ function Index() {
           </div>
 
           <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">
-              Услуги
-            </h3>
+            <h3 className="font-display text-sm font-bold tracking-widest uppercase">Services</h3>
             <ul className="mt-4 space-y-2 text-sm text-ink-foreground/65">
               {services.map((s) => (
                 <li key={s.title}>{s.title}</li>
               ))}
               <li className="flex items-center gap-2">
-                <Flame className="size-3.5 text-primary" /> Пожарозащита
+                <Flame className="size-3.5 text-primary" /> Fire-rated systems
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">
-              Контакти
-            </h3>
+            <h3 className="font-display text-sm font-bold tracking-widest uppercase">Contact us</h3>
             <ul className="mt-4 space-y-3 text-sm text-ink-foreground/65">
               <li className="flex items-center gap-2">
-                <Phone className="size-4 text-primary" /> 0888 123 456
+                <Phone className="size-4 text-primary" />
+                <a href="tel:+447979112991">07979 112991</a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="size-4 text-primary" /> office@stroymax.bg
+                <Mail className="size-4 text-primary" />
+                <a href="mailto:ecoisulatelimited@gmail.com">ecoisulatelimited@gmail.com</a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 size-4 text-primary" /> София, ул. Строителна 12
+                <MapPin className="mt-0.5 size-4 text-primary" /> 692-696 Stratford Road, Sparkhill,
+                Birmingham, United Kingdom
               </li>
             </ul>
 
@@ -543,33 +602,33 @@ function Index() {
             >
               <input
                 required
-                placeholder="Вашето име"
+                placeholder="Name"
                 className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
               />
               <input
                 required
-                type="tel"
-                placeholder="Телефон"
+                type="email"
+                placeholder="Email address"
                 className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
               />
               <textarea
                 rows={3}
-                placeholder="Вашето запитване"
+                placeholder="Message"
                 className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
               />
               <button
                 type="submit"
                 className="w-full rounded-sm bg-primary py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase"
               >
-                Изпрати запитване
+                Submit form
               </button>
             </form>
           </div>
         </div>
 
         <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-ink-foreground/10 px-5 pt-6 text-xs text-ink-foreground/50 sm:flex-row sm:justify-between">
-          <p>© 2026 Строймакс ООД. Всички права запазени.</p>
-          <p>Политика за поверителност · Общи условия</p>
+          <p>© 2026 Eco Insulate Limited. All rights reserved.</p>
+          <p>Privacy policy · Terms &amp; conditions</p>
         </div>
       </footer>
     </div>
