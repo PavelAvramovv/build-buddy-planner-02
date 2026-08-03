@@ -110,11 +110,17 @@ const stats = [
 const projectFilters = ["All projects", "Insulation", "Render", "Cladding"];
 
 const projects = [
+  { img: proj2After.url, title: "Full render, Dudley", tag: "Render" },
+  { img: proj1After.url, title: "EWI + silicone render, Dudley", tag: "Insulation" },
+  { img: proj3Progress.url, title: "Semi-detached, work in progress", tag: "Insulation" },
+  { img: proj4Complete.url, title: "Detached house, Solihull", tag: "Render" },
+  { img: proj2AfterSide.url, title: "Side elevation, Dudley", tag: "Render" },
+  { img: svcCladding, title: "Rear extension, Coventry", tag: "Cladding" },
   { img: heroHouse, title: "Detached house, Birmingham", tag: "Insulation" },
   { img: aboutSite, title: "Terrace façade, Solihull", tag: "Render" },
-  { img: svcCladding, title: "Rear extension, Coventry", tag: "Cladding" },
   { img: svcRender, title: "Apartment block, Wolverhampton", tag: "Render" },
 ];
+
 
 const faqs = [
   {
