@@ -11,6 +11,7 @@ const TITLE = "Our Projects — Insulation & Rendering, West Midlands";
 const DESCRIPTION =
   "Recent Eco Insulate Limited projects: external wall insulation, silicone render and cladding across Birmingham, Dudley, Solihull and Coventry.";
 const URL = "https://build-buddy-planner-02.lovable.app/projects";
+const OG_IMAGE = `https://build-buddy-planner-02.lovable.app${projects[0]?.img ?? ""}`;
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -21,9 +22,9 @@ export const Route = createFileRoute("/projects")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: `https://build-buddy-planner-02.lovable.app${projects[0].img}` },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: `https://build-buddy-planner-02.lovable.app${projects[0].img}` },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: URL }],
   }),
