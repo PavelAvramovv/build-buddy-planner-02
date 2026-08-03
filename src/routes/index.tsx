@@ -27,6 +27,7 @@ import svcCladding from "@/assets/svc-cladding.jpg";
 import aAfter from "@/assets/a-after.jpg.asset.json";
 import bAfterFront from "@/assets/b-after-front.jpg.asset.json";
 import bAfterSide from "@/assets/b-after-side.jpg.asset.json";
+import bBeforeSide from "@/assets/b-before-side.jpg.asset.json";
 import cProgress from "@/assets/c-progress.jpg.asset.json";
 import dComplete from "@/assets/d-complete.jpg.asset.json";
 
