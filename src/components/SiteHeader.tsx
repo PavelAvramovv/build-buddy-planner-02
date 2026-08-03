@@ -55,7 +55,7 @@ export function SiteHeader({ variant = "solid" }: { variant?: "solid" | "overlay
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <a
             href={company.phoneHref}
             className="hidden items-center gap-2 text-sm font-semibold text-ink-foreground sm:flex"
@@ -65,12 +65,48 @@ export function SiteHeader({ variant = "solid" }: { variant?: "solid" | "overlay
           </a>
           <Link
             to="/contact"
-            className="rounded-sm bg-primary px-4 py-2.5 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5"
+            className="rounded-sm bg-primary px-3 py-2.5 font-display text-[0.7rem] font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5 sm:px-4 sm:text-xs"
           >
             Free quote
           </Link>
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex size-10 shrink-0 items-center justify-center rounded-sm border border-ink-foreground/25 text-ink-foreground lg:hidden"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </div>
       </div>
+
+      {open ? (
+        <div className="border-t border-ink-foreground/10 bg-ink lg:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-5 py-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.to}
+                {...("hash" in item && item.hash ? { hash: item.hash } : {})}
+                onClick={() => setOpen(false)}
+                className="border-b border-ink-foreground/10 py-3.5 font-display text-sm font-semibold tracking-widest text-ink-foreground/85 uppercase last:border-b-0"
+                activeProps={{ className: "text-primary" }}
+                activeOptions={{ exact: item.to === "/" }}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href={company.phoneHref}
+              className="flex items-center gap-2 py-3.5 text-sm font-semibold text-ink-foreground sm:hidden"
+            >
+              <Phone className="size-4 text-primary" />
+              {company.phone}
+            </a>
+          </nav>
+        </div>
+      ) : null}
     </header>
   );
 }
