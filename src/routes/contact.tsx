@@ -21,9 +21,12 @@ export const Route = createFileRoute("/contact")({
         content: "Free surveys and fixed-price quotations across Birmingham and the UK.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://build-buddy-planner-02.lovable.app/contact" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://build-buddy-planner-02.lovable.app/contact" }],
   }),
+
   component: ContactPage,
 });
 
