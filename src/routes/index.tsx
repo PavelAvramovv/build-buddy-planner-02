@@ -84,30 +84,36 @@ const benefits = [
 const services = [
   {
     img: svcInsulation,
-    title: "Топлоизолация на фасади",
-    text: "EPS и минерална вата с пълна сертифицирана система за максимална енергийна ефективност.",
+    title: "Монтаж на топлоизолация",
+    text: "Изпълняваме пълна изолационна система от опитни майстори — за топъл дом и по-ниски сметки.",
+    points: ["Професионален монтаж", "Сертифицирани системи", "Реална икономия на енергия"],
   },
   {
     img: svcRender,
-    title: "Силиконови мазилки",
-    text: "Гъвкави, устойчиви на замърсяване покрития в широка гама цветове.",
+    title: "Екологични материали",
+    text: "Работим с широка гама материали с ниско въздействие върху околната среда и висока ефективност.",
+    points: ["Голям избор", "Устойчиви материали", "Дълготраен ефект"],
   },
   {
     img: svcPlaster,
-    title: "Машинни мазилки",
-    text: "Вътрешни и външни мазилки с прецизна равнинност и бързи срокове.",
+    title: "Консултация за енергийна ефективност",
+    text: "Оглед на място и конкретни препоръки — къде губите топлина и как да го решите изгодно.",
+    points: ["Индивидуален оглед", "Максимална икономия", "По-нисък въглероден отпечатък"],
   },
   {
     img: svcCladding,
     title: "Окачени фасади",
     text: "Вентилируеми фасади и облицовки с модерна визия и дълъг живот.",
+    points: ["Модерен външен вид", "Защита от влага", "Минимална поддръжка"],
   },
   {
     img: heroHouse,
     title: "Цялостни ремонти",
     text: "Довършителни работи, покриви, дограма и вътрешен ремонт с един изпълнител.",
+    points: ["Един отговорник", "Ясни срокове", "Прозрачна цена"],
   },
 ];
+
 
 const stats = [
   { icon: Award, value: "12+", label: "Години опит" },
@@ -287,7 +293,16 @@ function Index() {
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-lg leading-tight font-semibold">{s.title}</h3>
-                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.text}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
+                  <ul className="mt-3 flex-1 space-y-1.5">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-primary" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+
                   <a
                     href="#contact"
                     className="mt-5 inline-flex items-center gap-2 font-display text-xs font-bold tracking-widest uppercase"
