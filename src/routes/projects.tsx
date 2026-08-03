@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, Check, Clock, MapPin } from "lucide-react";
 
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -27,6 +27,43 @@ export const Route = createFileRoute("/projects")({
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Eco Insulate Limited projects",
+          itemListElement: projects.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "CreativeWork",
+              name: p.title,
+              description: p.details,
+              image: `https://build-buddy-planner-02.lovable.app${p.img}`,
+              locationCreated: { "@type": "Place", name: p.location },
+            },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://build-buddy-planner-02.lovable.app/",
+            },
+            { "@type": "ListItem", position: 2, name: "Projects", item: URL },
+          ],
+        }),
+      },
+    ],
   }),
   component: ProjectsPage,
 });
@@ -72,11 +109,11 @@ function ProjectsPage() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             {shown.map((p) => (
               <article
                 key={p.title}
-                className="overflow-hidden rounded-sm bg-card"
+                className="flex flex-col overflow-hidden rounded-sm bg-card"
                 style={{ boxShadow: "var(--shadow-card)" }}
               >
                 <img
@@ -85,16 +122,37 @@ function ProjectsPage() {
                   loading="lazy"
                   className="aspect-4/3 w-full object-cover"
                 />
-                <div className="p-5">
-                  <span className="font-display text-[0.65rem] font-bold tracking-widest text-primary uppercase">
-                    {p.tag}
-                  </span>
-                  <h2 className="mt-2 text-lg leading-tight font-semibold">{p.title}</h2>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.summary}</p>
-                  <p className="mt-3 flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <MapPin className="size-3.5 text-primary" />
-                    {p.location}
-                  </p>
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="rounded-sm bg-primary/15 px-2 py-1 font-display text-[0.65rem] font-bold tracking-widest text-primary uppercase">
+                      {p.tag}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <MapPin className="size-3.5 text-primary" />
+                      {p.location}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <Clock className="size-3.5 text-primary" />
+                      {p.duration}
+                    </span>
+                  </div>
+
+                  <h2 className="mt-3 text-xl leading-tight font-bold">{p.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.details}</p>
+
+                  <div className="mt-5 border-t border-border pt-4">
+                    <p className="font-display text-[0.65rem] font-bold tracking-widest text-foreground uppercase">
+                      Scope of works
+                    </p>
+                    <ul className="mt-3 space-y-2">
+                      {p.scope.map((s) => (
+                        <li key={s} className="flex gap-2 text-sm text-muted-foreground">
+                          <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </article>
             ))}
