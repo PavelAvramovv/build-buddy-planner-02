@@ -21,6 +21,11 @@ import {
 } from "lucide-react";
 
 import { BeforeAfterAI } from "@/components/BeforeAfterAI";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { GoogleMap } from "@/components/GoogleMap";
+import { services } from "@/lib/site-content";
+
 import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
 import svcInsulation from "@/assets/svc-insulation.jpg";
