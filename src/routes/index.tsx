@@ -1,19 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
   Award,
   Building2,
   CheckCircle2,
-  Facebook,
-  Flame,
   Hammer,
-  HardHat,
-  Instagram,
-  Mail,
   MapPin,
-  Phone,
-  Ruler,
   Shield,
   Star,
   ThermometerSun,
@@ -21,12 +14,16 @@ import {
 } from "lucide-react";
 
 import { BeforeAfterAI } from "@/components/BeforeAfterAI";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { GoogleMap } from "@/components/GoogleMap";
+import { services } from "@/lib/site-content";
+
 import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
-import svcInsulation from "@/assets/svc-insulation.jpg";
 import svcRender from "@/assets/svc-render.jpg";
 import svcCladding from "@/assets/svc-cladding.jpg";
-import svcPlaster from "@/assets/svc-plaster.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,15 +47,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navItems = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "AI Visualiser", href: "#visualiser" },
-  { label: "Projects", href: "#projects" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-];
 
 const benefits = [
   {
@@ -83,38 +71,6 @@ const benefits = [
   },
 ];
 
-const services = [
-  {
-    img: svcInsulation,
-    title: "Insulation Installation",
-    text: "Our team of experts will install high-quality insulation in your home, ensuring maximum energy efficiency and comfort, using eco-friendly materials that minimise environmental impact.",
-    points: ["Professional installation", "Eco-friendly materials", "Energy-saving benefits"],
-  },
-  {
-    img: svcRender,
-    title: "Eco-friendly Materials",
-    text: "A wide range of eco-friendly insulation materials, carefully selected for their sustainability and effectiveness — from natural fibres to recycled options.",
-    points: ["Variety of materials", "Sustainability", "Effectiveness"],
-  },
-  {
-    img: svcPlaster,
-    title: "Energy Efficiency Consultation",
-    text: "Personalised recommendations to optimise your home's energy usage. We identify areas for improvement and implement sustainable solutions for long-term savings.",
-    points: ["Customised consultation", "Maximised savings", "Reduced carbon footprint"],
-  },
-  {
-    img: svcCladding,
-    title: "External Wall Cladding",
-    text: "Ventilated façades and cladding systems that protect the building fabric while giving your property a modern, lasting finish.",
-    points: ["Modern appearance", "Moisture protection", "Minimal maintenance"],
-  },
-  {
-    img: heroHouse,
-    title: "Render & Plaster Finishes",
-    text: "Smooth silicone render, monocouche and internal plaster finishes applied by time-served plasterers for a flawless, durable surface.",
-    points: ["Crisp, smooth finishes", "Colour of your choice", "Clear timescales and pricing"],
-  },
-];
 
 const stats = [
   { icon: Award, value: "12+", label: "Years of experience" },
@@ -176,49 +132,8 @@ function Index() {
   return (
     <div id="top" className="min-h-screen bg-background">
       {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-30">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-5">
-          <a href="#top" className="flex items-center gap-2.5 text-ink-foreground">
-            <span className="flex size-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
-              <HardHat className="size-5" />
-            </span>
-            <span className="font-display text-lg leading-none font-bold tracking-wide uppercase">
-              Eco Insulate
-              <span className="block text-[0.6rem] font-medium tracking-[0.3em] text-primary">
-                limited
-              </span>
-            </span>
-          </a>
+      <SiteHeader variant="overlay" />
 
-          <nav className="hidden items-center gap-6 lg:flex">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="font-display text-sm font-semibold tracking-widest text-ink-foreground/80 uppercase transition-colors hover:text-primary"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="tel:+447979112991"
-              className="hidden items-center gap-2 text-sm font-semibold text-ink-foreground sm:flex"
-            >
-              <Phone className="size-4 text-primary" />
-              07979 112991
-            </a>
-            <a
-              href="#contact"
-              className="rounded-sm bg-primary px-4 py-2.5 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase transition-transform hover:-translate-y-0.5"
-            >
-              Free quote
-            </a>
-          </div>
-        </div>
-      </header>
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-ink">
@@ -341,13 +256,15 @@ function Index() {
                     ))}
                   </ul>
 
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
                     className="mt-5 inline-flex items-center gap-2 font-display text-xs font-bold tracking-widest uppercase"
                   >
-                    Contact us
+                    Read more
                     <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </Link>
+
                 </div>
               </article>
             ))}
@@ -401,12 +318,13 @@ function Index() {
               ))}
             </div>
 
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="mt-8 inline-block rounded-sm bg-primary px-6 py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase"
             >
               Get in touch
-            </a>
+            </Link>
+
           </div>
         </div>
       </section>
@@ -517,138 +435,29 @@ function Index() {
             Get in touch today for a free consultation on your insulation needs. Alternatively call
             07979 112991.
           </p>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="mt-6 inline-block rounded-sm bg-primary px-7 py-3.5 font-display text-sm font-bold tracking-widest text-primary-foreground uppercase"
           >
             Request a free quote
-          </a>
+          </Link>
+
         </div>
       </section>
 
-      {/* Footer / contact */}
-      <footer id="contact" className="bg-ink py-16 text-ink-foreground">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex size-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
-                <HardHat className="size-5" />
-              </span>
-              <span className="font-display text-lg font-bold tracking-wide uppercase">
-                Eco Insulate Limited
-              </span>
-            </div>
-            <p className="mt-4 text-sm text-ink-foreground/65">
-              Sustainable insulation, render and plaster solutions for homes across the United
-              Kingdom.
-            </p>
-            <div className="mt-5 flex gap-3">
-              <a
-                href="https://facebook.com/profile.php?id=100090297229480"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="flex size-9 items-center justify-center rounded-full bg-ink-soft hover:text-primary"
-              >
-                <Facebook className="size-4" />
-              </a>
-              <a
-                href="https://instagram.com/ecoisulatelimited"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="flex size-9 items-center justify-center rounded-full bg-ink-soft hover:text-primary"
-              >
-                <Instagram className="size-4" />
-              </a>
-              <span className="flex size-9 items-center justify-center rounded-full bg-ink-soft">
-                <Ruler className="size-4" />
-              </span>
-            </div>
+      {/* Map */}
+      <section className="bg-surface py-16">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="text-center">
+            <p className="eyebrow">Find us</p>
+            <h2 className="mt-2 text-4xl font-bold">Where we are based</h2>
           </div>
-
-          <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">
-              Quick links
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm text-ink-foreground/65">
-              {navItems.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-primary">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">Services</h3>
-            <ul className="mt-4 space-y-2 text-sm text-ink-foreground/65">
-              {services.map((s) => (
-                <li key={s.title}>{s.title}</li>
-              ))}
-              <li className="flex items-center gap-2">
-                <Flame className="size-3.5 text-primary" /> Fire-rated systems
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display text-sm font-bold tracking-widest uppercase">Contact us</h3>
-            <ul className="mt-4 space-y-3 text-sm text-ink-foreground/65">
-              <li className="flex items-center gap-2">
-                <Phone className="size-4 text-primary" />
-                <a href="tel:+447979112991">07979 112991</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="size-4 text-primary" />
-                <a href="mailto:ecoisulatelimited@gmail.com">ecoisulatelimited@gmail.com</a>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 size-4 text-primary" /> 692-696 Stratford Road, Sparkhill,
-                Birmingham, United Kingdom
-              </li>
-            </ul>
-
-            <form
-              className="mt-6 space-y-2"
-              onSubmit={(e) => {
-                e.preventDefault();
-                (e.currentTarget as HTMLFormElement).reset();
-              }}
-            >
-              <input
-                required
-                placeholder="Name"
-                className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
-              />
-              <input
-                required
-                type="email"
-                placeholder="Email address"
-                className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
-              />
-              <textarea
-                rows={3}
-                placeholder="Message"
-                className="w-full rounded-sm bg-ink-soft px-3 py-2.5 text-sm text-ink-foreground placeholder:text-ink-foreground/40 focus:ring-2 focus:ring-primary focus:outline-hidden"
-              />
-              <button
-                type="submit"
-                className="w-full rounded-sm bg-primary py-3 font-display text-xs font-bold tracking-widest text-primary-foreground uppercase"
-              >
-                Submit form
-              </button>
-            </form>
-          </div>
+          <GoogleMap className="mt-10" />
         </div>
+      </section>
 
-        <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-2 border-t border-ink-foreground/10 px-5 pt-6 text-xs text-ink-foreground/50 sm:flex-row sm:justify-between">
-          <p>© 2026 Eco Insulate Limited. All rights reserved.</p>
-          <p>Privacy policy · Terms &amp; conditions</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
+
