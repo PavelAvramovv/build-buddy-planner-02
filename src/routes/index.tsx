@@ -1,19 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
   Award,
   Building2,
   CheckCircle2,
-  Facebook,
-  Flame,
   Hammer,
-  HardHat,
-  Instagram,
-  Mail,
   MapPin,
-  Phone,
-  Ruler,
   Shield,
   Star,
   ThermometerSun,
@@ -28,10 +21,9 @@ import { services } from "@/lib/site-content";
 
 import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
-import svcInsulation from "@/assets/svc-insulation.jpg";
 import svcRender from "@/assets/svc-render.jpg";
 import svcCladding from "@/assets/svc-cladding.jpg";
-import svcPlaster from "@/assets/svc-plaster.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
