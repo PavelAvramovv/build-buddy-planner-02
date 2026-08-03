@@ -4,13 +4,14 @@ import { HardHat, Phone } from "lucide-react";
 import { company } from "@/lib/site-content";
 
 export const navItems = [
-  { label: "Home", to: "/" as const, hash: undefined },
+  { label: "Home", to: "/" as const },
   { label: "About", to: "/" as const, hash: "about" },
-  { label: "Services", to: "/services" as const, hash: undefined },
+  { label: "Services", to: "/services" as const },
   { label: "AI Visualiser", to: "/" as const, hash: "visualiser" },
-  { label: "Blog", to: "/blog" as const, hash: undefined },
-  { label: "Contact", to: "/contact" as const, hash: undefined },
+  { label: "Blog", to: "/blog" as const },
+  { label: "Contact", to: "/contact" as const },
 ];
+
 
 export function SiteHeader({ variant = "solid" }: { variant?: "solid" | "overlay" }) {
   return (
