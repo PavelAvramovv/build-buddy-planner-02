@@ -11,7 +11,7 @@ export const Route = createFileRoute("/services/$slug")({
     if (!service) throw notFound();
     return { service };
   },
-  head: ({ loaderData }) => {
+  head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
         meta: [{ title: "Service not found | Eco Insulate Limited" }, { name: "robots", content: "noindex" }],
@@ -19,6 +19,7 @@ export const Route = createFileRoute("/services/$slug")({
     }
     const { service } = loaderData;
     const title = `${service.title} | Eco Insulate Limited`;
+    const url = `https://build-buddy-planner-02.lovable.app/services/${params.slug}`;
     return {
       meta: [
         { title },
@@ -26,10 +27,27 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: service.intro },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: service.title,
+            description: service.intro,
+            areaServed: "United Kingdom",
+            provider: { "@type": "LocalBusiness", name: "Eco Insulate Limited", telephone: "07979 112991" },
+            url,
+          }),
+        },
       ],
     };
   },
+
   component: ServiceDetail,
 });
 

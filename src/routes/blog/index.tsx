@@ -20,9 +20,12 @@ export const Route = createFileRoute("/blog/")({
         content: "Guides on insulation costs, render choices and energy efficiency for UK homes.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://build-buddy-planner-02.lovable.app/blog" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://build-buddy-planner-02.lovable.app/blog" }],
   }),
+
   component: BlogIndex,
 });
 

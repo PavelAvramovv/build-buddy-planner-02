@@ -77,15 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Eco Insulate Limited — Insulation & Rendering UK" },
+      {
+        name: "description",
+        content:
+          "Eco Insulate Limited installs eco-friendly insulation, render, plaster and cladding across Birmingham and the UK.",
+      },
+      { name: "author", content: "Eco Insulate Limited" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:site_name", content: "Eco Insulate Limited" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_GB" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
+
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
