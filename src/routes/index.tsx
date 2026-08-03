@@ -306,8 +306,12 @@ function Index() {
         </div>
       </section>
 
+      {/* Real before & after photos */}
+      <RealProjects />
+
       {/* AI before & after visualiser */}
       <BeforeAfterAI />
+
 
       {/* About */}
       <section id="about" className="bg-background py-20">
