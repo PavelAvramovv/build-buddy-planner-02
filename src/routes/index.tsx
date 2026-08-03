@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import { BeforeAfterAI } from "@/components/BeforeAfterAI";
+import { RealProjects } from "@/components/RealProjects";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { GoogleMap } from "@/components/GoogleMap";
@@ -23,6 +24,12 @@ import heroHouse from "@/assets/hero-house.jpg";
 import aboutSite from "@/assets/about-site.jpg";
 import svcRender from "@/assets/svc-render.jpg";
 import svcCladding from "@/assets/svc-cladding.jpg";
+import proj1After from "@/assets/proj1-after.jpg.asset.json";
+import proj2After from "@/assets/proj2-after.jpg.asset.json";
+import proj2AfterSide from "@/assets/proj2-after-side.jpg.asset.json";
+import proj3Progress from "@/assets/proj3-progress.jpg.asset.json";
+import proj4Complete from "@/assets/proj4-complete.jpg.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
